@@ -246,7 +246,7 @@ bool TBEditField::OnEvent(const TBWidgetEvent &ev)
 	}
 	else if (ev.type == EVENT_TYPE_KEY_UP)
 	{
-		return true;
+		return false;
 	}
 	else if ((ev.type == EVENT_TYPE_CLICK && ev.target->GetID() == TBIDC("popupmenu")) ||
 			(ev.type == EVENT_TYPE_SHORTCUT))
