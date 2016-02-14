@@ -10,8 +10,8 @@
 
 namespace tb {
 
-// On C++ compilers that support it, use const expr for hash so that
-// TBID comparisions turn into simple uint32 comparisions compiletime.
+// On C++ compilers that support it, use constexpr for hash so that
+// TBID comparisons turn into simple compile-time uint32 comparisons.
 // Disabled for TB_RUNTIME_DEBUG_INFO builds, so TBID string debugging
 // is available.
 //
@@ -41,11 +41,11 @@ constexpr uint32 TBGetHash(const char* str)
 	return (str && *str) ? TBGetHash_one(str[0], str + 1, basis) : 0;
 }
 
-#define TBIDC(str) tb::TBGetHash(str)
+#define TBIDC(str) ::tb::TBGetHash(str)
 
 #else // TB_SUPPORT_CONSTEXPR
 
-#define TBIDC(str) tb::TBID(str)
+#define TBIDC(str) ::tb::TBID(str)
 
 /** Get hash value from string */
 uint32 TBGetHash(const char *str);
