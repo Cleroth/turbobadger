@@ -279,7 +279,7 @@ void TBScroller::Scroll(float start_speed_ppms_x, float start_speed_ppms_y)
 		// Update expected translation
 		GetTargetChildTranslation(m_expected_scroll_x, m_expected_scroll_y);
 
-		PostMessageDelayed(TBIDC("scroll"), nullptr, (uint32)PAN_MSG_DELAY_MS);
+		PostMsgDelayed(TBIDC("scroll"), nullptr, (uint32)PAN_MSG_DELAY_MS);
 	}
 }
 
@@ -372,7 +372,7 @@ void TBScroller::OnMessageReceived(TBMessage *msg)
 			double next_fire_time = msg->GetFireTime() + PAN_MSG_DELAY_MS;
 			// avoid timer catch-up if program went sleeping for a while.
 			next_fire_time = MAX(next_fire_time, now_ms);
-			PostMessageOnTime(TBIDC("scroll"), nullptr, next_fire_time);
+			PostMsgOnTime(TBIDC("scroll"), nullptr, next_fire_time);
 		}
 	}
 }
