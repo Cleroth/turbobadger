@@ -338,10 +338,10 @@ static void timer_callback()
 
 // This doesn't really belong here (it belongs in tb_system_[linux/windows].cpp.
 // This is here since the proper implementations has not yet been done.
-void TBSystem::RescheduleTimer(double fire_time)
-{
-	ReschedulePlatformTimer(fire_time, false);
-}
+//void TBSystem::RescheduleTimer(double fire_time)
+//{
+//	ReschedulePlatformTimer(fire_time, false);
+//}
 
 static void window_refresh_callback(GLFWwindow *window)
 {
