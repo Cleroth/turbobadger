@@ -267,8 +267,8 @@ void TBWindow::OnResized(int old_w, int old_h)
 	m_close_button.SetRect(TBRect(mover_padding_rect.x + mover_padding_rect.w - button_w, mover_padding_rect.y, button_w, button_h));
 
 	TBRect title_rect = mover_padding_rect;
-	if (m_settings & WINDOW_SETTINGS_CLOSE_BUTTON)
-		title_rect.w -= mover_padding_right + button_w;
+	//if (m_settings & WINDOW_SETTINGS_CLOSE_BUTTON)
+	//	title_rect.w -= mover_padding_right + button_w;
 	m_textfield.SetRect(title_rect);
 }
 
