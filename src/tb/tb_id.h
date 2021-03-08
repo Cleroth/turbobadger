@@ -19,7 +19,11 @@ class TBID
 {
 public:
 	TBID(uint32 id = 0)				{ Set(id); }
-	TBID(const char *string)		{ Set(string); }
+#ifndef TB_RUNTIME_DEBUG_INFO
+	constexpr TBID(const char * string) : id(TBIDC(string))		{ }
+#else
+	TBID(const char * string) { Set(string); }
+#endif
 	TBID(const TBID &id)			{ Set(id); }
 
 #ifdef TB_RUNTIME_DEBUG_INFO
